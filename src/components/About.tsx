@@ -76,7 +76,7 @@ const About = () => {
             />
             <div className="absolute -bottom-8 -left-8 bg-accent text-white p-8 rounded-xl shadow-lg max-w-xs">
               <div className="text-3xl font-bold mb-2">25+</div>
-              <div className="text-accent/90">
+              <div className="text-white">
                 Years serving Colorado's real estate appraisal needs with integrity and expertise
               </div>
             </div>
