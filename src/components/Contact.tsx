@@ -1,5 +1,5 @@
 
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, User, Building } from 'lucide-react';
 import { useState } from 'react';
 
 const Contact = () => {
@@ -7,15 +7,14 @@ const Contact = () => {
     name: '',
     email: '',
     phone: '',
-    subject: '',
+    propertyType: '',
     message: ''
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Form submission logic would go here
-    alert('Thank you for your message. We will contact you soon!');
+    alert('Thank you for your inquiry. We will contact you within 24 hours to discuss your appraisal needs.');
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -25,21 +24,42 @@ const Contact = () => {
     });
   };
 
+  const contactInfo = [
+    {
+      icon: Phone,
+      title: "Main Office",
+      content: "(970) 352-1343",
+      action: "tel:+19703521343"
+    },
+    {
+      icon: Mail,
+      title: "General Inquiries",
+      content: "info@mccartylw.com",
+      action: "mailto:info@mccartylw.com"
+    },
+    {
+      icon: Building,
+      title: "Office Address",
+      content: "Greeley, Colorado\nServing the Front Range",
+      action: null
+    }
+  ];
+
   return (
     <section id="contact" className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-6 mb-16">
           <div className="flex items-center justify-center gap-2">
-            <div className="w-12 h-1 bg-blue-600 rounded-full"></div>
-            <span className="text-blue-600 font-semibold uppercase tracking-wide text-sm">Contact Us</span>
-            <div className="w-12 h-1 bg-blue-600 rounded-full"></div>
+            <div className="w-12 h-1 bg-accent rounded-full"></div>
+            <span className="text-accent font-semibold uppercase tracking-wide text-sm">Contact Us</span>
+            <div className="w-12 h-1 bg-accent rounded-full"></div>
           </div>
-          <h2 className="text-4xl font-bold text-slate-900 leading-tight">
-            Get Your Free Consultation
+          <h2 className="text-4xl font-serif font-bold text-primary leading-tight">
+            Get Your Professional Appraisal
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Ready to discuss your legal needs? Contact McCarty Law Firm today for a free consultation. 
-            We're here to help you understand your options and protect your rights.
+          <p className="text-xl text-muted max-w-3xl mx-auto leading-relaxed">
+            Ready to discuss your property valuation needs? Contact McCarty Land & Water Valuation, Inc. 
+            for professional appraisal services across Colorado.
           </p>
         </div>
 
@@ -47,54 +67,40 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="lg:col-span-1 space-y-8">
             <div className="bg-white rounded-xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Contact Information</h3>
+              <h3 className="text-2xl font-serif font-bold text-primary mb-6">Contact Information</h3>
               
               <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="text-blue-600" size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-slate-900 mb-1">Phone</h4>
-                    <a href="tel:+17574221801" className="text-slate-600 hover:text-blue-600 transition-colors">
-                      (757) 422-1801
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="text-blue-600" size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-slate-900 mb-1">Email</h4>
-                    <a href="mailto:info@mccartylw.com" className="text-slate-600 hover:text-blue-600 transition-colors">
-                      info@mccartylw.com
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="text-blue-600" size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-slate-900 mb-1">Address</h4>
-                    <div className="text-slate-600">
-                      Norfolk, Virginia<br />
-                      Serving Hampton Roads
+                {contactInfo.map((info, index) => (
+                  <div key={index} className="flex items-start gap-4">
+                    <div className="bg-secondary/20 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <info.icon className="text-secondary" size={24} />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-primary mb-1">{info.title}</h4>
+                      {info.action ? (
+                        <a 
+                          href={info.action} 
+                          className="text-muted hover:text-accent transition-colors whitespace-pre-line"
+                        >
+                          {info.content}
+                        </a>
+                      ) : (
+                        <div className="text-muted whitespace-pre-line">
+                          {info.content}
+                        </div>
+                      )}
                     </div>
                   </div>
-                </div>
+                ))}
 
                 <div className="flex items-start gap-4">
-                  <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Clock className="text-blue-600" size={24} />
+                  <div className="bg-secondary/20 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Clock className="text-secondary" size={24} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 mb-1">Office Hours</h4>
-                    <div className="text-slate-600 space-y-1">
-                      <div>Monday - Friday: 9:00 AM - 5:00 PM</div>
+                    <h4 className="font-semibold text-primary mb-1">Business Hours</h4>
+                    <div className="text-muted space-y-1 text-sm">
+                      <div>Monday - Friday: 8:00 AM - 5:00 PM</div>
                       <div>Saturday: By Appointment</div>
                       <div>Sunday: Closed</div>
                     </div>
@@ -103,16 +109,17 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-blue-600 rounded-xl p-8 text-white">
-              <h3 className="text-xl font-bold mb-4">Emergency Legal Assistance</h3>
-              <p className="text-blue-100 mb-4">
-                Need immediate legal assistance? We understand that legal emergencies don't wait for business hours.
+            <div className="bg-accent rounded-xl p-8 text-white">
+              <h3 className="text-xl font-serif font-bold mb-4">Need Rush Service?</h3>
+              <p className="text-accent/90 mb-4">
+                We understand that some appraisal needs are time-sensitive. Contact us to discuss 
+                expedited service options for urgent assignments.
               </p>
               <a 
-                href="tel:+17574221801" 
-                className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-block"
+                href="tel:+19703521343" 
+                className="bg-white text-accent px-6 py-3 rounded-lg font-semibold hover:bg-slate-50 transition-colors inline-block"
               >
-                Call Now
+                Call for Rush Service
               </a>
             </div>
           </div>
@@ -120,12 +127,12 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="lg:col-span-2">
             <div className="bg-white rounded-xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Send Us a Message</h3>
+              <h3 className="text-2xl font-serif font-bold text-primary mb-6">Request an Appraisal</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">
+                    <label htmlFor="name" className="block text-sm font-semibold text-primary mb-2">
                       Full Name *
                     </label>
                     <input
@@ -135,12 +142,12 @@ const Contact = () => {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
                       placeholder="Your full name"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-semibold text-primary mb-2">
                       Email Address *
                     </label>
                     <input
@@ -150,7 +157,7 @@ const Contact = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -158,7 +165,7 @@ const Contact = () => {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-semibold text-slate-700 mb-2">
+                    <label htmlFor="phone" className="block text-sm font-semibold text-primary mb-2">
                       Phone Number
                     </label>
                     <input
@@ -167,37 +174,37 @@ const Contact = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
-                      placeholder="(757) 123-4567"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
+                      placeholder="(970) 123-4567"
                     />
                   </div>
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-semibold text-slate-700 mb-2">
-                      Subject *
+                    <label htmlFor="propertyType" className="block text-sm font-semibold text-primary mb-2">
+                      Property Type *
                     </label>
                     <select
-                      id="subject"
-                      name="subject"
+                      id="propertyType"
+                      name="propertyType"
                       required
-                      value={formData.subject}
+                      value={formData.propertyType}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
                     >
-                      <option value="">Select a subject</option>
-                      <option value="personal-injury">Personal Injury</option>
-                      <option value="business-law">Business Law</option>
-                      <option value="real-estate">Real Estate</option>
-                      <option value="employment-law">Employment Law</option>
-                      <option value="estate-planning">Estate Planning</option>
-                      <option value="family-law">Family Law</option>
+                      <option value="">Select property type</option>
+                      <option value="residential">Residential</option>
+                      <option value="commercial">Commercial</option>
+                      <option value="agricultural">Agricultural/Ranch</option>
+                      <option value="land">Vacant Land</option>
+                      <option value="water-rights">Water Rights</option>
+                      <option value="conservation">Conservation Easement</option>
                       <option value="other">Other</option>
                     </select>
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">
-                    Message *
+                  <label htmlFor="message" className="block text-sm font-semibold text-primary mb-2">
+                    Project Details *
                   </label>
                   <textarea
                     id="message"
@@ -206,18 +213,22 @@ const Contact = () => {
                     rows={6}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors resize-none"
-                    placeholder="Please describe your legal needs and how we can help you..."
+                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors resize-none"
+                    placeholder="Please describe your property and appraisal needs. Include property address, intended use of appraisal, and any special considerations..."
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center justify-center gap-2"
+                  className="w-full bg-accent text-white px-8 py-4 rounded-lg hover:bg-accent/90 transition-colors font-semibold flex items-center justify-center gap-2"
                 >
-                  Send Message
+                  Submit Request
                   <Send size={20} />
                 </button>
+
+                <p className="text-sm text-muted text-center">
+                  We typically respond to all inquiries within 24 hours during business days.
+                </p>
               </form>
             </div>
           </div>

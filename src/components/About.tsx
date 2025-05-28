@@ -1,5 +1,5 @@
 
-import { Award, BookOpen, Gavel, Heart } from 'lucide-react';
+import { Award, BookOpen, TrendingUp, Heart } from 'lucide-react';
 
 const About = () => {
   return (
@@ -9,59 +9,60 @@ const About = () => {
           <div className="space-y-8">
             <div className="space-y-6">
               <div className="flex items-center gap-2">
-                <div className="w-12 h-1 bg-blue-600 rounded-full"></div>
-                <span className="text-blue-600 font-semibold uppercase tracking-wide text-sm">About Our Firm</span>
+                <div className="w-12 h-1 bg-accent rounded-full"></div>
+                <span className="text-accent font-semibold uppercase tracking-wide text-sm">About Our Firm</span>
               </div>
-              <h2 className="text-4xl font-bold text-slate-900 leading-tight">
-                Committed to Excellence in Legal Representation
+              <h2 className="text-4xl font-serif font-bold text-primary leading-tight">
+                Colorado's Premier Land & Water Valuation Experts
               </h2>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                McCarty Law Firm has been serving the Hampton Roads community for over two decades. 
-                Our commitment to providing personalized, high-quality legal services has earned us 
-                the trust of countless clients throughout Virginia.
+              <p className="text-lg text-muted leading-relaxed">
+                For over 25 years, McCarty Land & Water Valuation, Inc. has been Colorado's trusted 
+                source for comprehensive real estate appraisal services. Our team combines deep local 
+                knowledge with cutting-edge valuation methodologies to deliver accurate, defensible 
+                appraisals for the most complex properties.
               </p>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                We believe that every client deserves dedicated representation and clear communication 
-                throughout their legal journey. Our approach combines extensive legal knowledge with 
-                genuine care for our clients' well-being and success.
+              <p className="text-lg text-muted leading-relaxed">
+                We understand that every property tells a unique story. Whether it's a ranch with 
+                century-old water rights, agricultural land with conservation potential, or commercial 
+                property in Colorado's evolving markets, we provide the expertise you need.
               </p>
             </div>
 
             <div className="grid grid-cols-2 gap-6">
               <div className="space-y-3">
-                <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center">
-                  <Gavel className="text-blue-600" size={24} />
+                <div className="bg-secondary/20 w-12 h-12 rounded-lg flex items-center justify-center">
+                  <TrendingUp className="text-secondary" size={24} />
                 </div>
-                <h3 className="font-semibold text-slate-900">Experienced Advocacy</h3>
-                <p className="text-slate-600 text-sm">
-                  Decades of courtroom experience and successful case outcomes.
+                <h3 className="font-semibold text-primary">Market Expertise</h3>
+                <p className="text-muted text-sm">
+                  Deep understanding of Colorado's diverse real estate markets.
                 </p>
               </div>
               <div className="space-y-3">
-                <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center">
-                  <Heart className="text-blue-600" size={24} />
+                <div className="bg-secondary/20 w-12 h-12 rounded-lg flex items-center justify-center">
+                  <Heart className="text-secondary" size={24} />
                 </div>
-                <h3 className="font-semibold text-slate-900">Personal Touch</h3>
-                <p className="text-slate-600 text-sm">
-                  Every client receives personalized attention and dedicated service.
+                <h3 className="font-semibold text-primary">Client Focus</h3>
+                <p className="text-muted text-sm">
+                  Personalized service with clear communication throughout the process.
                 </p>
               </div>
               <div className="space-y-3">
-                <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center">
-                  <BookOpen className="text-blue-600" size={24} />
+                <div className="bg-secondary/20 w-12 h-12 rounded-lg flex items-center justify-center">
+                  <BookOpen className="text-secondary" size={24} />
                 </div>
-                <h3 className="font-semibold text-slate-900">Legal Expertise</h3>
-                <p className="text-slate-600 text-sm">
-                  Comprehensive knowledge across multiple areas of law.
+                <h3 className="font-semibold text-primary">Technical Excellence</h3>
+                <p className="text-muted text-sm">
+                  Advanced methodologies and comprehensive analysis techniques.
                 </p>
               </div>
               <div className="space-y-3">
-                <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center">
-                  <Award className="text-blue-600" size={24} />
+                <div className="bg-secondary/20 w-12 h-12 rounded-lg flex items-center justify-center">
+                  <Award className="text-secondary" size={24} />
                 </div>
-                <h3 className="font-semibold text-slate-900">Proven Results</h3>
-                <p className="text-slate-600 text-sm">
-                  Track record of successful outcomes for our clients.
+                <h3 className="font-semibold text-primary">Proven Results</h3>
+                <p className="text-muted text-sm">
+                  Thousands of successful appraisals across Colorado.
                 </p>
               </div>
             </div>
@@ -69,14 +70,14 @@ const About = () => {
 
           <div className="relative">
             <img 
-              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=700&fit=crop"
-              alt="Law Office Interior"
+              src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&h=700&fit=crop"
+              alt="Professional Appraisal Team at Work"
               className="w-full h-[500px] object-cover rounded-2xl shadow-xl"
             />
-            <div className="absolute -bottom-8 -left-8 bg-blue-600 text-white p-8 rounded-xl shadow-lg max-w-xs">
-              <div className="text-3xl font-bold mb-2">20+</div>
-              <div className="text-blue-100">
-                Years of dedicated legal service to the Hampton Roads community
+            <div className="absolute -bottom-8 -left-8 bg-accent text-white p-8 rounded-xl shadow-lg max-w-xs">
+              <div className="text-3xl font-bold mb-2">25+</div>
+              <div className="text-accent/90">
+                Years serving Colorado's real estate appraisal needs with integrity and expertise
               </div>
             </div>
           </div>

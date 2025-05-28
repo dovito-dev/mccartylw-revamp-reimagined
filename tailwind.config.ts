@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,6 +19,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
+				serif: ['Playfair Display', 'Georgia', 'serif'],
 				sans: ['Inter', 'system-ui', 'sans-serif'],
 			},
 			colors: {
@@ -29,24 +29,25 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					DEFAULT: '#1a365d', // Deep Navy
+					foreground: '#ffffff'
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					DEFAULT: '#8fbc8f', // Sage Green
+					foreground: '#1a365d'
 				},
+				accent: {
+					DEFAULT: '#cd853f', // Copper Accent
+					foreground: '#ffffff'
+				},
+				muted: {
+					DEFAULT: '#708090', // Slate Gray
+					foreground: '#ffffff'
+				},
+				// Keep existing shadcn variables for compatibility
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
-				},
-				muted: {
-					DEFAULT: 'hsl(var(--muted))',
-					foreground: 'hsl(var(--muted-foreground))'
-				},
-				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
