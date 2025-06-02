@@ -65,7 +65,7 @@ const Footer = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="text-accent flex-shrink-0 mt-1" size={20} />
                 <div className="text-white/80">
-                  310 Mountain Avenue<br />
+                  310 Mountain Avenue # C<br />
                   Berthoud, Colorado 80513
                 </div>
               </div>

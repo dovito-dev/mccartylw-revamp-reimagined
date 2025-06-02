@@ -40,7 +40,7 @@ const Contact = () => {
     {
       icon: Building,
       title: "Office Address",
-      content: "310 Mountain Avenue\nBerthoud, Colorado 80513",
+      content: "310 Mountain Avenue # C\nBerthoud, Colorado 80513",
       action: null
     }
   ];
