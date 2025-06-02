@@ -52,8 +52,8 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <Phone className="text-accent flex-shrink-0" size={20} />
-                <a href="tel:+19703521343" className="text-white/80 hover:text-white transition-colors">
-                  (970) 352-1343
+                <a href="tel:+19706350900" className="text-white/80 hover:text-white transition-colors">
+                  (970) 635-0900
                 </a>
               </div>
               <div className="flex items-center gap-3">
@@ -65,8 +65,8 @@ const Footer = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="text-accent flex-shrink-0 mt-1" size={20} />
                 <div className="text-white/80">
-                  Greeley, Colorado<br />
-                  Serving the Front Range
+                  310 Mountain Avenue<br />
+                  Berthoud, Colorado 80513
                 </div>
               </div>
             </div>

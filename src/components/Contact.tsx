@@ -28,8 +28,8 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Main Office",
-      content: "(970) 352-1343",
-      action: "tel:+19703521343"
+      content: "(970) 635-0900",
+      action: "tel:+19706350900"
     },
     {
       icon: Mail,
@@ -40,7 +40,7 @@ const Contact = () => {
     {
       icon: Building,
       title: "Office Address",
-      content: "Greeley, Colorado\nServing the Front Range",
+      content: "310 Mountain Avenue\nBerthoud, Colorado 80513",
       action: null
     }
   ];
@@ -116,7 +116,7 @@ const Contact = () => {
                 expedited service options for urgent assignments.
               </p>
               <a 
-                href="tel:+19703521343" 
+                href="tel:+19706350900" 
                 className="bg-white text-accent px-6 py-3 rounded-lg font-semibold hover:bg-slate-50 transition-colors inline-block"
               >
                 Call for Rush Service

@@ -13,9 +13,9 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center sm:justify-between items-center text-sm">
             <div className="flex flex-wrap items-center gap-4">
-              <a href="tel:+19703521343" className="flex items-center gap-1 hover:text-secondary transition-colors">
+              <a href="tel:+19706350900" className="flex items-center gap-1 hover:text-secondary transition-colors">
                 <Phone size={14} />
-                <span>(970) 352-1343</span>
+                <span>(970) 635-0900</span>
               </a>
               <a href="mailto:info@mccartylw.com" className="flex items-center gap-1 hover:text-secondary transition-colors">
                 <Mail size={14} />
