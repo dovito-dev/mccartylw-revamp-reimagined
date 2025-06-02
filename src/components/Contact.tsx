@@ -1,3 +1,4 @@
+
 import { Phone, Mail, MapPin, Clock, Send, User, Building } from 'lucide-react';
 import { useState } from 'react';
 const Contact = () => {
@@ -52,7 +53,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="grid lg:grid-cols-3 gap-12 lg:items-start">
           {/* Contact Information */}
           <div className="lg:col-span-1 space-y-8">
             <div className="bg-white rounded-xl p-8 shadow-lg">
@@ -102,11 +103,11 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <div className="bg-white rounded-xl p-8 shadow-lg">
+          <div className="lg:col-span-2 flex">
+            <div className="bg-white rounded-xl p-8 shadow-lg flex-1 flex flex-col">
               <h3 className="text-2xl font-serif font-bold text-primary mb-6">Request an Appraisal</h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6 flex-1 flex flex-col">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-primary mb-2">
@@ -146,21 +147,23 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div>
+                <div className="flex-1 flex flex-col">
                   <label htmlFor="message" className="block text-sm font-semibold text-primary mb-2">
                     Project Details *
                   </label>
-                  <textarea id="message" name="message" required rows={6} value={formData.message} onChange={handleChange} className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors resize-none" placeholder="Please describe your property and appraisal needs. Include property address, intended use of appraisal, and any special considerations..."></textarea>
+                  <textarea id="message" name="message" required rows={6} value={formData.message} onChange={handleChange} className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors resize-none flex-1" placeholder="Please describe your property and appraisal needs. Include property address, intended use of appraisal, and any special considerations..."></textarea>
                 </div>
 
-                <button type="submit" className="w-full bg-accent text-white px-8 py-4 rounded-lg hover:bg-accent/90 transition-colors font-semibold flex items-center justify-center gap-2">
-                  Submit Request
-                  <Send size={20} />
-                </button>
+                <div className="mt-auto space-y-4">
+                  <button type="submit" className="w-full bg-accent text-white px-8 py-4 rounded-lg hover:bg-accent/90 transition-colors font-semibold flex items-center justify-center gap-2">
+                    Submit Request
+                    <Send size={20} />
+                  </button>
 
-                <p className="text-sm text-muted text-center">
-                  We typically respond to all inquiries within 24 hours during business days.
-                </p>
+                  <p className="text-sm text-muted text-center">
+                    We typically respond to all inquiries within 24 hours during business days.
+                  </p>
+                </div>
               </form>
             </div>
           </div>
