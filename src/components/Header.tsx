@@ -1,6 +1,7 @@
 
 import { Phone, Mail, MapPin, Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,20 +34,20 @@ const Header = () => {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <h1 className="text-2xl font-serif font-bold text-primary">
+            <Link to="/" className="text-2xl font-serif font-bold text-primary hover:text-primary/80 transition-colors">
               McCarty Land & Water Valuation, Inc.
-            </h1>
+            </Link>
           </div>
 
           {/* Desktop navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            <a href="#home" className="text-muted hover:text-primary font-medium transition-colors">Home</a>
-            <a href="#services" className="text-muted hover:text-primary font-medium transition-colors">Services</a>
-            <a href="#specialties" className="text-muted hover:text-primary font-medium transition-colors">Specialties</a>
-            <a href="#geographic" className="text-muted hover:text-primary font-medium transition-colors">Coverage</a>
-            <a href="#team" className="text-muted hover:text-primary font-medium transition-colors">Team</a>
-            <a href="#standards" className="text-muted hover:text-primary font-medium transition-colors">Standards</a>
-            <a href="#contact" className="bg-accent text-white px-6 py-2 rounded-lg hover:bg-accent/90 transition-colors font-medium">Get Appraisal</a>
+            <Link to="/" className="text-muted hover:text-primary font-medium transition-colors">Home</Link>
+            <Link to="/services" className="text-muted hover:text-primary font-medium transition-colors">Services</Link>
+            <Link to="/specialties" className="text-muted hover:text-primary font-medium transition-colors">Specialties</Link>
+            <Link to="/coverage" className="text-muted hover:text-primary font-medium transition-colors">Coverage</Link>
+            <Link to="/team" className="text-muted hover:text-primary font-medium transition-colors">Team</Link>
+            <Link to="/standards" className="text-muted hover:text-primary font-medium transition-colors">Standards</Link>
+            <Link to="/contact" className="bg-accent text-white px-6 py-2 rounded-lg hover:bg-accent/90 transition-colors font-medium">Get Appraisal</Link>
           </div>
 
           {/* Mobile menu button */}
@@ -62,13 +63,13 @@ const Header = () => {
         {isMenuOpen && (
           <div className="lg:hidden py-4 border-t">
             <div className="flex flex-col space-y-4">
-              <a href="#home" className="text-muted hover:text-primary font-medium transition-colors">Home</a>
-              <a href="#services" className="text-muted hover:text-primary font-medium transition-colors">Services</a>
-              <a href="#specialties" className="text-muted hover:text-primary font-medium transition-colors">Specialties</a>
-              <a href="#geographic" className="text-muted hover:text-primary font-medium transition-colors">Coverage</a>
-              <a href="#team" className="text-muted hover:text-primary font-medium transition-colors">Team</a>
-              <a href="#standards" className="text-muted hover:text-primary font-medium transition-colors">Standards</a>
-              <a href="#contact" className="bg-accent text-white px-6 py-2 rounded-lg hover:bg-accent/90 transition-colors font-medium inline-block w-fit">Get Appraisal</a>
+              <Link to="/" className="text-muted hover:text-primary font-medium transition-colors" onClick={() => setIsMenuOpen(false)}>Home</Link>
+              <Link to="/services" className="text-muted hover:text-primary font-medium transition-colors" onClick={() => setIsMenuOpen(false)}>Services</Link>
+              <Link to="/specialties" className="text-muted hover:text-primary font-medium transition-colors" onClick={() => setIsMenuOpen(false)}>Specialties</Link>
+              <Link to="/coverage" className="text-muted hover:text-primary font-medium transition-colors" onClick={() => setIsMenuOpen(false)}>Coverage</Link>
+              <Link to="/team" className="text-muted hover:text-primary font-medium transition-colors" onClick={() => setIsMenuOpen(false)}>Team</Link>
+              <Link to="/standards" className="text-muted hover:text-primary font-medium transition-colors" onClick={() => setIsMenuOpen(false)}>Standards</Link>
+              <Link to="/contact" className="bg-accent text-white px-6 py-2 rounded-lg hover:bg-accent/90 transition-colors font-medium inline-block w-fit" onClick={() => setIsMenuOpen(false)}>Get Appraisal</Link>
             </div>
           </div>
         )}
